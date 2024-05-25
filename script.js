@@ -17,7 +17,7 @@ function togglePlay() {
 }
 
 function updateButton() {
-  const icon = this.paused ? '►' : '❚ ❚';
+  const icon = video.paused ? '►' : '❚ ❚';
   toggle.textContent = icon;
 }
 
@@ -35,21 +35,13 @@ function handleRangeUpdate() {
   video[this.name] = this.value;
 }
 
-function skip() 
-{
-	if(parseFloat(this.dataset.skip)==-10)
-		rewind();
-	else
+function skip() {
   video.currentTime += parseFloat(this.dataset.skip);
-}
-function rewind()
-{
-	video.currentTime +=parseFloat(this.dataset.skip);
 }
 
 video.addEventListener('click', togglePlay);
-video.addEventListener('play', () => isPlaying = true);
-video.addEventListener('pause', () => isPlaying = false);
+video.addEventListener('play', updateButton);
+video.addEventListener('pause', updateButton);
 video.addEventListener('timeupdate', handleProgress);
 
 toggle.addEventListener('click', togglePlay);
