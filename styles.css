@@ -1,61 +1,46 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #333;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-}
-
+/* Add your CSS styles here */
 .player {
-    max-width: 750px;
-    margin: 20px;
-    border: 5px solid #333;
-    background: #000;
+  max-width: 750px;
+  margin: 50px auto;
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
 }
 
-.viewer {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-}
-
-.controls {
-    display: flex;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.1);
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.progress {
-    flex: 1;
-    display: flex;
-    height: 10px;
-    background: #555;
-    cursor: pointer;
-}
-
-.progress__filled {
-    width: 0%;
-    background: #ff0000;
-    flex: 0;
+.player__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .player__button {
-    background: none;
-    border: 0;
-    line-height: 1;
-    color: white;
-    text-align: center;
-    outline: 0;
-    padding: 10px;
-    cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+.player__button:focus {
+  outline: none;
+}
+
+.progress {
+  flex: 1;
+  height: 5px;
+  background: #aaa;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.progress__filled {
+  background: #00ccff;
+  height: 100%;
 }
 
 .player__slider {
-    width: 100%;
+  width: 100px;
+  margin: 0 10px;
 }
